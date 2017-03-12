@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D0CAA011E736EC5000CA434 /* randomFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0CAA001E736EC5000CA434 /* randomFunction.swift */; };
 		9D1A857D1E73408500102F39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A857C1E73408500102F39 /* AppDelegate.swift */; };
-		9D1A857F1E73408500102F39 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A857E1E73408500102F39 /* GameScene.sks */; };
-		9D1A85811E73408500102F39 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A85801E73408500102F39 /* Actions.sks */; };
 		9D1A85831E73408500102F39 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A85821E73408500102F39 /* GameScene.swift */; };
 		9D1A85851E73408500102F39 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A85841E73408500102F39 /* GameViewController.swift */; };
 		9D1A85881E73408500102F39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A85861E73408500102F39 /* Main.storyboard */; };
 		9D1A858A1E73408500102F39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A85891E73408500102F39 /* Assets.xcassets */; };
 		9D1A858D1E73408500102F39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A858B1E73408500102F39 /* LaunchScreen.storyboard */; };
+		9D1A85951E73588E00102F39 /* GameScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A85941E73588E00102F39 /* GameScene2.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D0CAA001E736EC5000CA434 /* randomFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = randomFunction.swift; sourceTree = "<group>"; };
 		9D1A85791E73408500102F39 /* Ninja Jump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Jump.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1A857C1E73408500102F39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D1A857E1E73408500102F39 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		9D1A85801E73408500102F39 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		9D1A85821E73408500102F39 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		9D1A85841E73408500102F39 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		9D1A85871E73408500102F39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D1A85891E73408500102F39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D1A858C1E73408500102F39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D1A858E1E73408500102F39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D1A85941E73588E00102F39 /* GameScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene2.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +44,7 @@
 		9D1A85701E73408500102F39 = {
 			isa = PBXGroup;
 			children = (
+				9D0CAA001E736EC5000CA434 /* randomFunction.swift */,
 				9D1A857B1E73408500102F39 /* Ninja Jump */,
 				9D1A857A1E73408500102F39 /* Products */,
 			);
@@ -61,14 +62,13 @@
 			isa = PBXGroup;
 			children = (
 				9D1A857C1E73408500102F39 /* AppDelegate.swift */,
-				9D1A857E1E73408500102F39 /* GameScene.sks */,
-				9D1A85801E73408500102F39 /* Actions.sks */,
 				9D1A85821E73408500102F39 /* GameScene.swift */,
 				9D1A85841E73408500102F39 /* GameViewController.swift */,
 				9D1A85861E73408500102F39 /* Main.storyboard */,
 				9D1A85891E73408500102F39 /* Assets.xcassets */,
 				9D1A858B1E73408500102F39 /* LaunchScreen.storyboard */,
 				9D1A858E1E73408500102F39 /* Info.plist */,
+				9D1A85941E73588E00102F39 /* GameScene2.sks */,
 			);
 			path = "Ninja Jump";
 			sourceTree = "<group>";
@@ -134,10 +134,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D1A85881E73408500102F39 /* Main.storyboard in Resources */,
-				9D1A857F1E73408500102F39 /* GameScene.sks in Resources */,
 				9D1A858A1E73408500102F39 /* Assets.xcassets in Resources */,
 				9D1A858D1E73408500102F39 /* LaunchScreen.storyboard in Resources */,
-				9D1A85811E73408500102F39 /* Actions.sks in Resources */,
+				9D1A85951E73588E00102F39 /* GameScene2.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +149,7 @@
 			files = (
 				9D1A85831E73408500102F39 /* GameScene.swift in Sources */,
 				9D1A85851E73408500102F39 /* GameViewController.swift in Sources */,
+				9D0CAA011E736EC5000CA434 /* randomFunction.swift in Sources */,
 				9D1A857D1E73408500102F39 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
