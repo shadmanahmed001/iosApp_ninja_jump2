@@ -45,6 +45,25 @@ let backgroundmusic = SKAction.repeatForever(SKAction.playSoundFileNamed("Godzil
         
     }
     
+    private var currentCoinDropSpawnTime : TimeInterval = 0
+    private var CoinDropSpawnRate : TimeInterval = 0.2
+    private let random = GKARC4RandomSource()
+    
+    func spawnCoindrop() {
+        let CoinDrop = SKSpriteNode(imageNamed: "bill")
+        CoinDrop.size = CGSize(width: 60, height: 60)
+        CoinDrop.position = CGPoint(x: 200, y:  300)
+        CoinDrop.zPosition = 2
+        
+        CoinDrop.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 20, height: 20))
+        
+        let randomPosition = abs(CGFloat(random.nextInt()).truncatingRemainder(dividingBy: size.width))
+        CoinDrop.position = CGPoint(x: randomPosition, y: size.height)
+        
+        self.addChild(CoinDrop)
+    }
+    
+    
     func createScene() {
         self.physicsWorld.contactDelegate = self
         
@@ -67,19 +86,11 @@ let backgroundmusic = SKAction.repeatForever(SKAction.playSoundFileNamed("Godzil
             //            }
             
         }
-        //////////////////////////
-        let CoinDrop = SKSpriteNode(imageNamed: "Coin")
-        CoinDrop.size = CGSize(width: 25, height: 25)
-        CoinDrop.position = CGPoint(x: 200, y:  300)
-        CoinDrop.zPosition = 2
+
         
-        CoinDrop.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 20, height: 20))
-        
-        Ground.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: -size.width / 2, y: 0), to: CGPoint(x: size.width, y: 0))
 
 
         
-        self.addChild(CoinDrop)
         
         print("self view bounds size\(self.view!.bounds.size)")
         scoreLbl.position = CGPoint(x: 0, y: 500)
@@ -146,12 +157,22 @@ let backgroundmusic = SKAction.repeatForever(SKAction.playSoundFileNamed("Godzil
         
         if firstBody.categoryBitMask == PhysicsCategory.Score && secondBody.categoryBitMask == PhysicsCategory.Ghost{
             score += 1
+            if score % 2 == 0{
+                spawnCoindrop()
+                print("Coin should drop")
+            }
             scoreLbl.text = "\(score)"
             firstBody.node?.removeFromParent()
             
         }
         else if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.Score{
             score += 1
+            if score % 2 == 0{
+                spawnCoindrop()
+                print("Coin should drop")
+            }
+            
+            
             scoreLbl.text = "\(score)"
             secondBody.node?.removeFromParent()
         }
@@ -167,6 +188,7 @@ let backgroundmusic = SKAction.repeatForever(SKAction.playSoundFileNamed("Godzil
                 createBTN()
             }
         }
+                        
             
         else if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.Ground || firstBody.categoryBitMask == PhysicsCategory.Ground && secondBody.categoryBitMask == PhysicsCategory.Ghost {
             
