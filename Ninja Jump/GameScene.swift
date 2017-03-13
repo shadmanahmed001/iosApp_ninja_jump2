@@ -51,7 +51,7 @@ let backgroundmusic = SKAction.repeatForever(SKAction.playSoundFileNamed("Godzil
     
     func spawnCoindrop() {
         let CoinDrop = SKSpriteNode(imageNamed: "bill")
-        CoinDrop.size = CGSize(width: 60, height: 60)
+        CoinDrop.size = CGSize(width: 80, height: 25)
         CoinDrop.position = CGPoint(x: 200, y:  300)
         CoinDrop.zPosition = 2
         
@@ -59,6 +59,7 @@ let backgroundmusic = SKAction.repeatForever(SKAction.playSoundFileNamed("Godzil
         
         let randomPosition = abs(CGFloat(random.nextInt()).truncatingRemainder(dividingBy: size.width))
         CoinDrop.position = CGPoint(x: randomPosition, y: size.height)
+        
         
         self.addChild(CoinDrop)
     }
