@@ -15,6 +15,9 @@
 		9D1A858A1E73408500102F39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A85891E73408500102F39 /* Assets.xcassets */; };
 		9D1A858D1E73408500102F39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A858B1E73408500102F39 /* LaunchScreen.storyboard */; };
 		9D1A85951E73588E00102F39 /* GameScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A85941E73588E00102F39 /* GameScene2.sks */; };
+		E7CC737E1E7713F0009DDFE5 /* 04B_19__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = E7CC737D1E7713F0009DDFE5 /* 04B_19__.TTF */; };
+		E7CC73801E7717D0009DDFE5 /* Sro_-_Submersed_Phonics_JBYo_Collab.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E7CC737F1E7717D0009DDFE5 /* Sro_-_Submersed_Phonics_JBYo_Collab.mp3 */; };
+		E7CC73821E7719D5009DDFE5 /* Godzilla_Unleashed_-_Jet_Jaguar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E7CC73811E7719D5009DDFE5 /* Godzilla_Unleashed_-_Jet_Jaguar.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		9D1A858C1E73408500102F39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D1A858E1E73408500102F39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D1A85941E73588E00102F39 /* GameScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene2.sks; sourceTree = "<group>"; };
+		E7CC737D1E7713F0009DDFE5 /* 04B_19__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04B_19__.TTF; sourceTree = "<group>"; };
+		E7CC737F1E7717D0009DDFE5 /* Sro_-_Submersed_Phonics_JBYo_Collab.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sro_-_Submersed_Phonics_JBYo_Collab.mp3"; sourceTree = "<group>"; };
+		E7CC73811E7719D5009DDFE5 /* Godzilla_Unleashed_-_Jet_Jaguar.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Godzilla_Unleashed_-_Jet_Jaguar.m4a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +67,12 @@
 		9D1A857B1E73408500102F39 /* Ninja Jump */ = {
 			isa = PBXGroup;
 			children = (
+				E7CC737D1E7713F0009DDFE5 /* 04B_19__.TTF */,
 				9D1A857C1E73408500102F39 /* AppDelegate.swift */,
+				E7CC737F1E7717D0009DDFE5 /* Sro_-_Submersed_Phonics_JBYo_Collab.mp3 */,
 				9D1A85821E73408500102F39 /* GameScene.swift */,
 				9D1A85841E73408500102F39 /* GameViewController.swift */,
+				E7CC73811E7719D5009DDFE5 /* Godzilla_Unleashed_-_Jet_Jaguar.m4a */,
 				9D1A85861E73408500102F39 /* Main.storyboard */,
 				9D1A85891E73408500102F39 /* Assets.xcassets */,
 				9D1A858B1E73408500102F39 /* LaunchScreen.storyboard */,
@@ -135,6 +144,9 @@
 			files = (
 				9D1A85881E73408500102F39 /* Main.storyboard in Resources */,
 				9D1A858A1E73408500102F39 /* Assets.xcassets in Resources */,
+				E7CC73801E7717D0009DDFE5 /* Sro_-_Submersed_Phonics_JBYo_Collab.mp3 in Resources */,
+				E7CC737E1E7713F0009DDFE5 /* 04B_19__.TTF in Resources */,
+				E7CC73821E7719D5009DDFE5 /* Godzilla_Unleashed_-_Jet_Jaguar.m4a in Resources */,
 				9D1A858D1E73408500102F39 /* LaunchScreen.storyboard in Resources */,
 				9D1A85951E73588E00102F39 /* GameScene2.sks in Resources */,
 			);

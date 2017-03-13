@@ -18,6 +18,8 @@ struct PhysicsCategory {
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+let backgroundmusic = SKAction.repeatForever(SKAction.playSoundFileNamed("Godzilla_Unleashed_-_Jet_Jaguar.m4a", waitForCompletion: true))
+    
     var Ground = SKSpriteNode()
     var Ghost = SKSpriteNode()
     
@@ -30,6 +32,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let scoreLbl = SKLabelNode()
     var died = Bool()
     var restartBTN = SKSpriteNode()
+    
+
     
     func restartScene() {
         self.removeAllChildren()
@@ -63,6 +67,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //            }
             
         }
+        //////////////////////////
+        let CoinDrop = SKSpriteNode(imageNamed: "Coin")
+        CoinDrop.size = CGSize(width: 25, height: 25)
+        CoinDrop.position = CGPoint(x: 200, y:  300)
+        CoinDrop.zPosition = 2
+        
+        CoinDrop.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 20, height: 20))
+        
+        Ground.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: -size.width / 2, y: 0), to: CGPoint(x: size.width, y: 0))
+
+
+        
+        self.addChild(CoinDrop)
+        
         print("self view bounds size\(self.view!.bounds.size)")
         scoreLbl.position = CGPoint(x: 0, y: 500)
         scoreLbl.text = "\(score)"
@@ -87,8 +105,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(Ground)
         
         
-        Ghost = SKSpriteNode(imageNamed: "Ghost")
-        Ghost.size = CGSize(width: 60, height: 70)
+        Ghost = SKSpriteNode(imageNamed: "icon")
+        Ghost.size = CGSize(width: 80, height: 80)
         Ghost.position = CGPoint(x: 0, y: 200)
         
         Ghost.physicsBody = SKPhysicsBody(circleOfRadius: Ghost.frame.height/2)
@@ -107,7 +125,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
-        
+        self.run(backgroundmusic)
         
         createScene()
         
@@ -126,10 +144,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let firstBody = contact.bodyA
         let secondBody = contact.bodyB
         
-        if firstBody.categoryBitMask == PhysicsCategory.Score && secondBody.categoryBitMask == PhysicsCategory.Ghost || firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.Score {
+        if firstBody.categoryBitMask == PhysicsCategory.Score && secondBody.categoryBitMask == PhysicsCategory.Ghost{
             score += 1
             scoreLbl.text = "\(score)"
+            firstBody.node?.removeFromParent()
+            
         }
+        else if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.Score{
+            score += 1
+            scoreLbl.text = "\(score)"
+            secondBody.node?.removeFromParent()
+        }
+            
         else if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.wall || firstBody.categoryBitMask == PhysicsCategory.wall && secondBody.categoryBitMask == PhysicsCategory.Ghost {
             
             enumerateChildNodes(withName: "WallPair", using: { (node, error) in
@@ -172,12 +198,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.run(spawnDelayForever)
             
             let distance = CGFloat(self.frame.width + 20)
-            let movePipes = SKAction.moveBy(x: -distance, y: 0.0, duration: TimeInterval(0.01 * distance))
+            let movePipes = SKAction.moveBy(x: -distance - 50, y: 0.0, duration: TimeInterval(0.01 * distance))
             let removePipes = SKAction.removeFromParent()
             moveAndRemove = SKAction.sequence([movePipes, removePipes])
             
             Ghost.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-            Ghost.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 90))
+            Ghost.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
         }
         else {
             if died == true {
@@ -185,7 +211,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             else {
                 Ghost.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-                Ghost.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 90))
+                Ghost.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
             }
             
             
@@ -203,9 +229,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createWalls(){
-        let scoreNode = SKSpriteNode()
+        let scoreNode = SKSpriteNode(imageNamed: "Coin")
         
-        scoreNode.size = CGSize(width: 1, height:900)
+        scoreNode.size = CGSize(width: 50, height:50)
         scoreNode.position = CGPoint(x: self.frame.width / 2, y: 0)
         scoreNode.physicsBody = SKPhysicsBody(rectangleOf: scoreNode.size)
         scoreNode.physicsBody?.affectedByGravity = false
@@ -248,7 +274,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         wallPair.zPosition = 1
         
-        let randomPosition = CGFloat.random(min: -250, max: 200)
+        let randomPosition = CGFloat.random(min: -100, max: 200)
         print("random is \(randomPosition)")
         
         wallPair.position.y = wallPair.position.y + randomPosition
